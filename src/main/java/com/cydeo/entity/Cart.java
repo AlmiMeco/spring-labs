@@ -1,6 +1,6 @@
 package com.cydeo.entity;
 
-import com.cydeo.enums.DiscountType;
+import com.cydeo.enums.CartState;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -8,21 +8,17 @@ import javax.persistence.*;
 import java.math.BigDecimal;
 
 @Entity
-@NoArgsConstructor
 @Data
-public class Discount {
+@NoArgsConstructor
+public class Cart {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private int discount;
-
     @Enumerated(EnumType.STRING)
-    private DiscountType discountType;
+    private CartState cartState;
 
-    private String name;
-
-
-
+    @ManyToOne
+    private Discount discount;
 }
