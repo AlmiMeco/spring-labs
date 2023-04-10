@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
+import java.nio.charset.spi.CharsetProvider;
 
 @Entity
 @Data
@@ -21,4 +22,7 @@ public class Cart {
 
     @ManyToOne
     private Discount discount;
+
+    @ManyToOne
+    private Customer customer;
 }

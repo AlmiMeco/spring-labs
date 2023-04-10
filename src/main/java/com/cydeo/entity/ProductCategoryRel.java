@@ -5,19 +5,19 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 
-
 @Entity
 @NoArgsConstructor
 @Data
-public class Balance {
+public class ProductCategoryRel {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private int amount;
+    @ManyToOne
+    private Product pId;
 
-    @OneToOne
-    private Customer customer;
+    @ManyToOne
+    private Category cId;
 
 }
