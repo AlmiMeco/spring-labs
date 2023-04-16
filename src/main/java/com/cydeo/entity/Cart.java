@@ -2,14 +2,17 @@ package com.cydeo.entity;
 
 import com.cydeo.enums.CartState;
 import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
 import java.nio.charset.spi.CharsetProvider;
 
 @Entity
-@Data
+@Getter
+@Setter
 @NoArgsConstructor
 public class Cart {
 
@@ -25,4 +28,12 @@ public class Cart {
 
     @ManyToOne
     private Customer customer;
+
+
+    @Override
+    public String toString() {
+        return "Cart{" +
+                "id=" + id +
+                '}';
+    }
 }

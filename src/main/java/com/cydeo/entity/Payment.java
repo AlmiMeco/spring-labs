@@ -2,13 +2,16 @@ package com.cydeo.entity;
 
 import com.cydeo.enums.PaymentMethod;
 import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import javax.persistence.*;
 
 @Entity
 @NoArgsConstructor
-@Data
+@Getter
+@Setter
 public class Payment {
 
 
@@ -21,5 +24,11 @@ public class Payment {
     @Enumerated(EnumType.STRING)
     private PaymentMethod paymentMethod;
 
-
+    @Override
+    public String toString() {
+        return "Payment{" +
+                "id=" + id +
+                ", paidPrice=" + paidPrice +
+                '}';
+    }
 }
